@@ -1,0 +1,22 @@
+.top-bar, .top-bar ul {
+  background-color: $nav-background;
+}
+
+.dark{
+  background-color: $nav-background;
+}
+
+.top-bar {
+  .menu-text {
+    color: $nav-font-color;
+  }
+
+  .right>li:nth-child(2) a {
+    padding-left: 0;
+  }
+
+  .right>li:nth-child(1) {
+    padding-right: 0;
+  }
+}
+
