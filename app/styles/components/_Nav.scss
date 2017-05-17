@@ -18,5 +18,10 @@
   .right>li:nth-child(1) {
     padding-right: 0;
   }
+
+  .active-link {
+    font-weight: $bold;
+    text-shadow: $cool-text-shadow;
+  }
 }
 
