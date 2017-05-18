@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var {Router, Route, hashHistory, IndexRoute} = require('react-router');
 var $ = require('jquery');
+window.jQuery = $;
 var Main = require('Main');
 var Timer = require('Timer');
 var Countdown = require('Countdown');
