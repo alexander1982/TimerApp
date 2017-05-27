@@ -7,10 +7,11 @@ var Controls = require('Controls');
 let Countdown = createClass({
 	                            getInitialState() {
 		                            return {
-			                            count           : 0,
+			                            count          : 0,
 			                            countdownStatus: 'stopped'
 		                            }
 	                            },
+	                            //Fired after props state changes args: previous props and state
 	                            componentDidUpdate(prevProps, prevState) {
 		                            if(this.state.countdownStatus !== prevState.countdownStatus){
 			                            switch(this.state.countdownStatus){
@@ -18,13 +19,32 @@ let Countdown = createClass({
 					                            this.startTimer();
 					                            break;
 				                            case 'stopped':
-					                            this.setState({count: 0});
+					                            this.setState({ count: 0 });
 				                            case 'paused':
 					                            clearInterval(this.timer);
 					                            this.timer = undefined;
 					                            break;
 			                            }
 		                            }
+	                            },
+	                            //Fired before props state changes args: next props and state
+	                            componentWillUpdate(nextProps, nextState) {
+
+	                            },
+	                            //Fired when component first appear no data will be able
+	                            componentWillMount() {
+		                            console.log('componentWillMount');
+	                            },
+	                            //Fired after everything is rendered all data is able
+	                            componentDidMount() {
+		                            console.log('componentDidMount');
+	                            },
+	                            //Fired when component removed from the dom
+	                            componentWillUnmount() {
+		                            console.log('componentWillUnmount');
+		                            clearInterval(this.timer);
+		                            this.timer = 'undefined';
+
 	                            },
 	                            handleSetCountdown(seconds) {
 		                            this.setState({
@@ -38,18 +58,26 @@ let Countdown = createClass({
 			                            this.setState({
 				                                          count: newCount >= 0? newCount : 0
 			                                          });
+			                            
+			                            if(newCount === 0){
+				                            this.setState({
+					                                          countdownStatus: 'stopped'
+				                                          });
+			                            }
 		                            }, 1000)
 	                            },
-															handleStatusChange(newStatus) {
-																this.setState({countdownStatus: newStatus});
-															},
+	                            handleStatusChange(newStatus) {
+		                            this.setState({ countdownStatus: newStatus });
+	                            },
 	                            render() {
 		                            var { count, countdownStatus } = this.state;
 		                            var renderControlArea = () => {
 			                            if(countdownStatus !== 'stopped'){
-				                            return <Controls countdownStatus={countdownStatus} onStatusChange={this.handleStatusChange}/>
+				                            return <Controls countdownStatus={countdownStatus}
+				                                             onStatusChange={this.handleStatusChange}/>
 			                            } else {
-				                            return <CountdownForm onSetCountdown={this.handleSetCountdown}/>
+				                            return <CountdownForm onStatusChange={this.handleStatusChange}
+				                                                  onSetCountdown={this.handleSetCountdown}/>
 			                            }
 		                            };
 		                            return (

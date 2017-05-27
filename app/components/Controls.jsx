@@ -11,6 +11,7 @@ let Controls = createClass({
 			                           this.props.onStatusChange(newStatus)
 		                           }
 	                           },
+	
 	                           render() {
 		                           var { countdownStatus } = this.props;
 		                           var renderStartStopButton = () => {
