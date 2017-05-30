@@ -82,6 +82,7 @@ let Countdown = createClass({
 		                            };
 		                            return (
 		                            <div>
+			                            <h1 className="page-header">Countdown App</h1>
 			                            <Clock totalSeconds={count}/>
 			                            {renderControlArea()}
 		                            </div>

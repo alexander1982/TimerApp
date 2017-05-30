@@ -11,14 +11,19 @@ let Controls = createClass({
 			                           this.props.onStatusChange(newStatus)
 		                           }
 	                           },
-	
+	                           componentWillReceiveProps(newProps) {
+																	console.log('componentWillReceiveProps', newProps.countdownStatus);
+	                           },
 	                           render() {
 		                           var { countdownStatus } = this.props;
 		                           var renderStartStopButton = () => {
 			                           if(countdownStatus === 'started'){
 				                           return <button className="button secondary" onClick={this.onStatusChange('paused')}>
-					                           ||</button>
+					                           pause</button>
 			                           } else if(countdownStatus === 'paused'){
+				                           return <button className="button primary" onClick={this.onStatusChange('started')}>
+					                           Start</button>
+			                           } else if(countdownStatus === 'stopped'){
 				                           return <button className="button primary" onClick={this.onStatusChange('started')}>
 					                           Start</button>
 			                           }

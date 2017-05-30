@@ -15,7 +15,7 @@ describe('render', () => {
 	it('Should render pause button when started', () => {
 		var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started"/>);
 		var $el = $(ReactDOM.findDOMNode(controls));
-		var $pauseButton = $el.find('button:contains(Pause)');
+		var $pauseButton = $el.find('button:contains(pause)');
 		expect($pauseButton.length).toBe(1);
 	})
 });
