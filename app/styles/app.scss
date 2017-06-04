@@ -1,9 +1,17 @@
 @import "base/variables";
+//COMPONENTS
 @import "components/Nav";
 @import "components/Clock";
 @import "components/Controls";
 @import "components/Countdown";
+@import "components/CountdownForm";
 @import "components/Timer";
+@import "components/Body";
+//FOUNDATION
+@import "base/foundation-settings";
+@import "foundation";
+@include foundation-everything;
+
 
 
 

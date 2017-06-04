@@ -2,6 +2,10 @@
   background-color: $nav-background;
 }
 
+.link {
+  color: white;
+}
+
 .dark{
   background-color: $nav-background;
 }
@@ -21,7 +25,7 @@
 
   .active-link {
     font-weight: $bold;
-    text-shadow: $cool-text-shadow;
+    color: #5452ff;
   }
 }
 

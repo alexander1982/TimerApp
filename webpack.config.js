@@ -20,6 +20,15 @@ module.exports = {
 		'process.env': {
 			'NODE_ENV': JSON.stringify('production')
 		} 
+	}),
+	new webpack.LoaderOptionsPlugin({
+		options: {
+			sassLoader: {
+				includePaths: [
+					path.resolve(__dirname, './node_modules/foundation-sites/scss')
+				]
+			}
+		}
 	})
 	],
 	output: {

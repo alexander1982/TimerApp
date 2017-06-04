@@ -1,21 +1,23 @@
 //COLORS
-$dark-color: #2b2b2b;
+$dark-color: #3b3b3b;
 $white-color: #ffffff;
+$light-grey-color: #d3d4fe;
 
 //NAVIGATION COLORS
 $nav-background: $dark-color;
 $nav-font-color: $white-color;
-$cool-text-shadow:  0 0 1px #d2d2ff, 0 0 2px #e3d1ff, 0 0 2px #4f55ff, 0 0 20px #b8c6ff, 0 0 3px #3631ff, 0 0 3px #ff00de;
+$cool-text-shadow:  0 0 1px #f1fff6, 0 0 2px #d3d4fe, 0 0 2px #e3d1ff, 0 0 20px #d3d4fe, 0 0 3px #d2d2ff, 0 0 3px #ff00de;
 
 $bold: bold;
 
 //Clock
 $clock-text-color: #ffffff;
-$clock-bg-color: #B5D0E2;
-$clock-border-color: #2099E8;
+$clock-bg-color: rgba(242, 240, 255, 1);
+$clock-border-color: rgba(166, 240, 255, 0.35);
 
 //PAGE HEADER FOR COUNTDOWN AND TIMER
 @mixin page-header() {
   margin: .5rem 0 0 0;
   text-align: center;
+  color: $white-color;
 }

@@ -26,7 +26,6 @@ let Timer = createClass({
 	                        handleStatusChange(newStatus) {
 		                        this.setState({
 			                                      countdownStatus: newStatus
-
 		                                      });
 	                        },
 	                        componentDidUpdate(prevProps, prevState) {
@@ -40,6 +39,8 @@ let Timer = createClass({
 					                        this.timer = undefined;
 				                        case 'stopped':
 					                        this.setState({count: 0});
+					                        clearInterval(this.timer);
+					                        this.timer = undefined;
 					                        break;
 			                        }
 		                        }

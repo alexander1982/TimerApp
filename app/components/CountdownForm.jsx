@@ -10,6 +10,7 @@ let CountdownForm = createClass({
 			                                this.refs.seconds.value = '';
 			                                this.props.onSetCountdown(parseInt(strSeconds, 10));
 		                                }
+		                                console.log(strSeconds.length);
 	                                },
 	                        render() {
 		                        return (

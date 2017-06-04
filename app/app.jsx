@@ -6,7 +6,8 @@ window.jQuery = $;
 var Main = require('Main');
 var Timer = require('Timer');
 var Countdown = require('Countdown');
-require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
+
+//Load Foundation
 $(document).foundation();
 
 require('style-loader!css-loader!sass-loader!ApplicationStyles');

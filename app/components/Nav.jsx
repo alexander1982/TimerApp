@@ -12,10 +12,10 @@ let Nav = () => {
 						React Timer App
 					</li>
 					<li>
-						<IndexLink to="/" activeClassName="active-link">Timer</IndexLink>
+						<IndexLink to="/" activeClassName="active-link" className="link">Timer</IndexLink>
 					</li>
 					<li>
-						<Link to="/countdown"  activeClassName="active-link">Countdown</Link>
+						<Link to="/countdown"  activeClassName="active-link" className="link">Countdown</Link>
 					</li>
 				</ul>
 			</section>

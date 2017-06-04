@@ -1,3 +1,4 @@
 .page-header {
   @include page-header();
+  color: $light-grey-color;
 }

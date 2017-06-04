@@ -31,10 +31,10 @@ describe('Timer component', () => {
 	it('Should pause the timer', (done) => {
 		var timer = TestUtils.renderIntoDocument(<Timer />);
 		timer.handleStartCountdown();
+		timer.handleStatusChange('paused');
 		setTimeout(() => {
-			timer.handleStatusChange('paused');
 			expect(timer.state.countdownStatus).toBe('paused');
-			expect(timer.state.count).toBe(1);
+			expect(timer.state.count).toBe(0);
 			done();
 		},1001);
 	});
@@ -49,5 +49,4 @@ describe('Timer component', () => {
 			done();
 		},2001);
 	});
-
 });

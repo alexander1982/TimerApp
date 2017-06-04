@@ -1,11 +1,14 @@
-var webpackConfig = require('./webpack.config.js');
+var webpackConfig = require('./webpack.config.js')
 
 module.exports = config => {
 	config.set({
 		           browsers     : ['Chrome'],
 		           singleRun    : true,
 		           frameworks   : ['mocha'],
-		           files        : ['node_modules/jquery/dist/jquery.min.js','app/tests/**/*.test.jsx'],
+		           files        : [
+			           'node_modules/jquery/dist/jquery.min.js',
+			           'app/tests/**/*.test.jsx',
+			           'node_modules/foundation-sites/dist/js/foundation.min.js'],
 		           preprocessors: {
 			           'app/tests/**/*.test.jsx': ['webpack', 'sourcemap']
 		           },
